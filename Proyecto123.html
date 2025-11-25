@@ -1,0 +1,759 @@
+<<<<<<< HEAD
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>JANZB — Capifresh · Refrescos funcionales</title>
+  <meta name="description" content="Capifresh de JANZB: bebidas enlatadas a base de manzana, mango y plátano formuladas para contribuir al bienestar digestivo dentro de un estilo de vida saludable.">
+  <style>
+    :root{
+      --accent:#37b24d; /* verde */
+      --accent-2:#ff8c42; /* mango */
+      --bg:#0f1724;
+      --card:#0b1220;
+      --glass: rgba(255,255,255,0.04);
+      --muted:#a3b1c2;
+      --radius:14px;
+      font-family:Inter,ui-sans-serif,system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:linear-gradient(180deg,#071022 0%, #081426 60%);color:#e6eef6;line-height:1.45}
+    header{display:flex;align-items:center;justify-content:space-between;padding:18px 28px}
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:flex;align-items:center;justify-content:center;font-weight:700;font-size:18px;box-shadow:0 6px 18px rgba(0,0,0,0.45)}
+    .brand h1{margin:0;font-size:18px}
+    nav a{color:var(--muted);text-decoration:none;margin-left:18px;font-size:14px}
+
+    /* HERO */
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:32px;align-items:center;padding:36px 28px}
+    .hero .content{max-width:720px}
+    .eyebrow{color:var(--accent);font-weight:700;font-size:13px}
+    .hero h2{font-size:40px;margin:8px 0}
+    .lead{color:var(--muted);margin-bottom:18px}
+    .cta-row{display:flex;gap:12px}
+    .btn{background:var(--accent);color:#062023;padding:12px 18px;border-radius:12px;font-weight:700;border:0;cursor:pointer}
+    .btn.secondary{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted)}
+
+    /* Product card column */
+    .product-column{background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));padding:18px;border-radius:18px}
+    .can{display:flex;flex-direction:column;gap:12px;align-items:center}
+    .can img{width:160px}
+    .flavors{display:flex;gap:10px;justify-content:center;margin-top:6px}
+    .pill{background:var(--glass);padding:8px 12px;border-radius:999px;font-size:13px;color:var(--muted)}
+
+    /* Features */
+    .features{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;padding:28px}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:18px;border-radius:14px}
+    .icon{width:48px;height:48px;border-radius:10px;background:rgba(255,255,255,0.02);display:flex;align-items:center;justify-content:center;margin-bottom:8px}
+
+    /* Interactive zone */
+    .interactive{display:grid;grid-template-columns:1fr 360px;gap:18px;padding:28px}
+    .products-grid{display:flex;flex-direction:column;gap:12px}
+    .product-item{display:flex;align-items:center;gap:12px;padding:12px;border-radius:12px;background:linear-gradient(90deg, rgba(255,255,255,0.01), rgba(255,255,255,0.005));border:1px solid rgba(255,255,255,0.02)}
+    .product-item img{width:64px}
+    .product-info h4{margin:0}
+    .add{margin-left:auto}
+
+    /* Right column */
+    .panel{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:18px;border-radius:12px}
+    .small{font-size:13px;color:var(--muted)}
+
+    /* FAQ */
+    .faq{padding:28px}
+    .faq-item{border-top:1px solid rgba(255,255,255,0.03);padding:12px 0}
+    .faq-question{display:flex;justify-content:space-between;cursor:pointer}
+
+    footer{padding:22px;border-top:1px solid rgba(255,255,255,0.02);display:flex;justify-content:space-between;align-items:center}
+
+    /* Responsiveness */
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr;}
+      .interactive{grid-template-columns:1fr}
+      .features{grid-template-columns:1fr}
+    }
+
+    /* small helpers */
+    .muted{color:var(--muted)}
+    .pill-apple{background:linear-gradient(90deg,#dff7e2,#d2f2d9);color:#09421b;padding:6px 10px;border-radius:999px;font-weight:700}
+    .pill-mango{background:linear-gradient(90deg,#fff0e0,#ffe6cc);color:#663300;padding:6px 10px;border-radius:999px;font-weight:700}
+    .pill-banana{background:linear-gradient(90deg,#fff9e0,#fff7d1);color:#6a4b00;padding:6px 10px;border-radius:999px;font-weight:700}
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <div class="logo">JB</div>
+      <div>
+        <h1>JANZB <small class="muted">· Capifresh</small></h1>
+        <div class="small muted">Refrescos funcionales — manzana • mango • plátano</div>
+      </div>
+    </div>
+    <nav>
+      <a href="#productos">Productos</a>
+      <a href="#beneficios">Beneficios</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" aria-label="Presentación Capifresh">
+      <div class="content">
+        <div class="eyebrow">NUEVO</div>
+        <h2>Capifresh — Refrescos enlatados pensados para tu digestión</h2>
+        <p class="lead">Capifresh combina ingredientes naturales de manzana, mango y plátano para ofrecer una bebida refrescante pensada para personas con molestias digestivas leves. Formulado para complementar una dieta equilibrada. <strong>No es un medicamento.</strong></p>
+        <div class="cta-row">
+          <button class="btn" id="trySamples">Pedir muestra</button>
+          <button class="btn secondary" id="verInfo">Ver fichas</button>
+        </div>
+        <div style="margin-top:16px;color:var(--muted);font-size:13px">Consulta siempre a un profesional de la salud si padeces gastritis o condiciones digestivas crónicas.</div>
+
+        <div style="margin-top:26px">
+          <h3 style="margin-bottom:8px">¿Cuál es tu sabor?</h3>
+          <div style="display:flex;gap:10px">
+            <button class="pill-apple" data-sabor="manzana">Manzana</button>
+            <button class="pill-mango" data-sabor="mango">Mango</button>
+            <button class="pill-banana" data-sabor="platano">Plátano</button>
+          </div>
+        </div>
+      </div>
+
+      <aside class="product-column" aria-hidden="false">
+        <div class="can">
+          <img src="lata.png" alt="Lata Capifresh">
+          <div style="text-align:center">
+            <div style="font-weight:700">Capifresh · Manzana</div>
+            <div class="muted" style="font-size:13px">330 ml | Sin conservantes artificiales</div>
+            <div class="flavors">
+              <div class="pill">Manzana</div>
+              <div class="pill">Mango</div>
+              <div class="pill">Plátano</div>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <section id="beneficios" class="features" aria-label="Beneficios principales">
+      <div class="card">
+        <div class="icon">🍎</div>
+        <h3>Formulación cuidadosa</h3>
+        <p class="muted">Ingredientes seleccionados para ser suaves con el estómago e incluir fibra soluble natural de las frutas.</p>
+      </div>
+      <div class="card">
+        <div class="icon">🌿</div>
+        <h3>Sin conservantes artificiales</h3>
+        <p class="muted">Procesos que buscan mantener las propiedades naturales sin añadir aditivos innecesarios.</p>
+      </div>
+      <div class="card">
+        <div class="icon">⚡</div>
+        <h3>Refrescante y práctico</h3>
+        <p class="muted">Latas de 330 ml perfectas para llevar y consumir en cualquier momento.</p>
+      </div>
+    </section>
+
+    <section class="interactive" aria-label="Zona interactiva">
+      <div>
+        <h3 id="productos">Nuestros productos</h3>
+        <div class="products-grid" id="productsGrid">
+          <!-- Product items populated por JS -->
+        </div>
+
+        <div style="margin-top:18px">
+          <h4>Test rápido — ¿Qué cuidado digestivo necesitas?</h4>
+          <form id="quiz" style="display:grid;gap:8px;margin-top:8px">
+            <label class="small"><input type="radio" name="q1" value="1" required> Molestias ocasionales (acidez leve)</label>
+            <label class="small"><input type="radio" name="q1" value="2"> Molestias frecuentes</label>
+            <label class="small"><input type="radio" name="q1" value="3"> Diagnóstico médico de gastritis</label>
+            <button type="submit" class="btn" style="width:180px">Ver recomendación</button>
+          </form>
+          <div id="quizResult" class="panel" style="margin-top:10px;display:none"></div>
+        </div>
+      </div>
+
+      <aside>
+        <div class="panel">
+          <h4>Ficha rápida</h4>
+          <p class="small">Tamaño: 330 ml · Ingredientes principales: pulpa y extractos de frutas, agua purificada, fibra soluble natural.</p>
+
+          <div style="margin-top:10px">
+            <strong>Advertencia:</strong>
+            <p class="small muted">Capifresh está formulado para contribuir al confort digestivo como parte de una dieta saludable. <strong>No está destinado a diagnosticar, tratar o curar enfermedades.</strong> Si tienes gastritis diagnosticada, consulta a tu médico antes de introducir nuevos alimentos o bebidas.</p>
+          </div>
+
+          <div style="margin-top:12px;display:flex;gap:8px">
+            <button class="btn" id="downloadPDF">Descargar ficha (PDF)</button>
+            <button class="btn secondary" id="openFaq">Ver FAQ</button>
+          </div>
+        </div>
+
+        <div style="height:12px"></div>
+
+        <div class="panel" style="margin-top:12px">
+          <h4>Promoción</h4>
+          <p class="small">Suscríbete y recibe 10% de descuento en tu primera compra.</p>
+          <input id="email" type="email" placeholder="tu@email.com" style="width:100%;padding:8px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;margin-top:8px;color:inherit">
+          <button class="btn" style="width:100%;margin-top:8px" id="subscribe">Suscribirme</button>
+          <div id="subResult" class="small muted" style="margin-top:8px;display:none"></div>
+        </div>
+      </aside>
+    </section>
+
+    <section id="faq" class="faq">
+      <h3>Preguntas frecuentes</h3>
+      <div class="faq-item">
+        <div class="faq-question"><div>¿Capifresh cura la gastritis?</div><div class="muted">+</div></div>
+        <div class="faq-answer muted" style="display:none;margin-top:8px">No. Capifresh está pensado para aportar confort digestivo en personas con molestias leves como parte de una alimentación equilibrada. No sustituye el tratamiento médico.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question"><div>¿Contiene azúcar?</div><div class="muted">+</div></div>
+        <div class="faq-answer muted" style="display:none;margin-top:8px">Contiene azúcares naturales de la fruta y una cantidad reducida añadida. Consulta la ficha técnica para valores exactos.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question"><div>¿Es apto para veganos?</div><div class="muted">+</div></div>
+        <div class="faq-answer muted" style="display:none;margin-top:8px">Sí. No empleamos ingredientes de origen animal.</div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div>
+      <strong>JANZB</strong> · Capifresh — Hecho con frutas reales
+    </div>
+    <div class="muted">Hecho en Perú · © JANZB 2025</div>
+  </footer>
+
+  <script>
+    // Datos de los productos
+    const productos = [
+      {
+        id: 'manzana',
+        name: 'Capifresh Manzana',
+        desc: 'Suave y ligeramente acidulada, con pectina natural para confort digestivo.',
+        img: 'https://images.unsplash.com/photo-1574226516831-e1dff420e38e?q=80&w=600&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder',
+        tag: 'Manzana'
+      },
+      {
+        id: 'mango',
+        name: 'Capifresh Mango',
+        desc: 'Exótico y dulce, formulado para ser gentil con el estómago.',
+        img: 'https://images.unsplash.com/photo-1567306226416-28f0efdc88ce?q=80&w=600&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder',
+        tag: 'Mango'
+      },
+      {
+        id: 'platano',
+        name: 'Capifresh Plátano',
+        desc: 'Suave, cremoso y rico en potasio; pensado para paladares sensibles.',
+        img: 'https://images.unsplash.com/photo-1506806732259-39c2d0268443?q=80&w=600&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder',
+        tag: 'Plátano'
+      }
+    ];
+
+    // Render productos
+    const grid = document.getElementById('productsGrid');
+    function renderProducts(){
+      grid.innerHTML = '';
+      products.forEach(p=>{
+        const item = document.createElement('div');
+        item.className = 'product-item';
+        item.innerHTML = `
+          <img src="${p.img}" alt="${p.name}">
+          <div class="product-info">
+            <h4>${p.name}</h4>
+            <div class="muted" style="font-size:13px">${p.desc}</div>
+            <div style="margin-top:8px"><span class="pill">${p.tag}</span></div>
+          </div>
+          <div class="add">
+            <button class="btn" data-id="${p.id}">Agregar</button>
+          </div>
+        `;
+        grid.appendChild(item);
+      })
+    }
+    renderProducts();
+
+    // Agregar acción "Agregar" con animación simple
+    document.addEventListener('click', e=>{
+      if(e.target.matches('.product-item .btn')){
+        const id = e.target.dataset.id;
+        e.target.disabled = true;
+        e.target.textContent = 'Añadido ✓';
+        setTimeout(()=>{e.target.disabled=false; e.target.textContent='Agregar'},1200);
+        // feedback visual
+        e.target.animate([{transform:'scale(1)'},{transform:'scale(1.06)'},{transform:'scale(1)'}],{duration:350});
+      }
+    });
+
+    // Quiz
+    const quiz = document.getElementById('quiz');
+    const quizResult = document.getElementById('quizResult');
+    quiz.addEventListener('submit', e=>{
+      e.preventDefault();
+      const val = +document.querySelector('input[name=q1]:checked').value;
+      quizResult.style.display = 'block';
+      if(val===1){
+        quizResult.innerHTML = '<strong>Recomendación:</strong> Puedes probar Capifresh en sabores suaves como Manzana o Plátano. Si las molestias persisten, consulta a un profesional.';
+      } else if(val===2){
+        quizResult.innerHTML = '<strong>Recomendación:</strong> Prioriza la moderación. Prefiere plátano o manzana, y consulta con tu médico si requieres orientación personalizada.';
+      } else {
+        quizResult.innerHTML = '<strong>Importante:</strong> Si tienes gastritis diagnosticada, consulta a tu médico antes de consumir nuevos productos. Capifresh no reemplaza tratamiento médico.';
+      }
+    });
+
+    // FAQ accordion
+    document.querySelectorAll('.faq-item').forEach((node, i)=>{
+      const q = node.querySelector('.faq-question');
+      q.addEventListener('click', ()=>{
+        const a = node.querySelector('.faq-answer');
+        const open = a.style.display === 'block';
+        document.querySelectorAll('.faq-answer').forEach(x=>x.style.display='none');
+        a.style.display = open ? 'none' : 'block';
+      })
+    });
+
+    // Suscripción (simulada)
+    document.getElementById('subscribe').addEventListener('click', ()=>{
+      const email = document.getElementById('email').value;
+      const res = document.getElementById('subResult');
+      if(!email || !email.includes('@')){res.style.display='block';res.textContent='Introduce un email válido';return}
+      res.style.display='block';res.textContent='¡Gracias! Revisa tu correo para confirmar la suscripción.';
+    });
+
+    // Botones principales
+    document.getElementById('trySamples').addEventListener('click', ()=>{
+      alert('Gracias por solicitar una muestra. Un representante de JANZB te contactará.');
+    });
+    document.getElementById('verInfo').addEventListener('click', ()=>{
+      document.querySelector('#beneficios').scrollIntoView({behavior:'smooth'});
+    });
+    document.getElementById('openFaq').addEventListener('click', ()=>{document.querySelector('#faq').scrollIntoView({behavior:'smooth'});});
+
+    // Descargar PDF: generador simple (crea un blob con texto)
+    document.getElementById('downloadPDF').addEventListener('click', ()=>{
+      const content = `Ficha Capifresh\n\nProductos:\n- Manzana\n- Mango\n- Plátano\n\nAdvertencia: Capifresh no es un medicamento. Consulte con su médico.`;
+      const blob = new Blob([content],{type:'application/pdf'});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a'); a.href=url; a.download='Ficha_Capifresh.pdf'; a.click(); URL.revokeObjectURL(url);
+    });
+
+    // Pulsar en sabores del hero para filtrar
+    document.querySelectorAll('[data-sabor]').forEach(btn=>{
+      btn.addEventListener('click', ()=>{
+        const sabor = btn.dataset.sabor;
+        const filtered = products.filter(p=>p.id===sabor);
+        grid.innerHTML='';
+        filtered.forEach(p=>{
+          const item = document.createElement('div');
+          item.className='product-item';
+          item.innerHTML = `
+            <img src="${p.img}" alt="${p.name}">
+            <div class="product-info">
+              <h4>${p.name}</h4>
+              <div class="muted" style="font-size:13px">${p.desc}</div>
+            </div>
+            <div class="add"><button class="btn" data-id="${p.id}">Agregar</button></div>
+          `;
+          grid.appendChild(item);
+        });
+      })
+    });
+
+    // Accesibilidad: keyboard for FAQ
+    document.addEventListener('keydown', e=>{
+      if(e.key==='f' && (e.ctrlKey||e.metaKey)){
+        document.querySelector('#faq').scrollIntoView();
+      }
+    });
+
+  </script>
+</body>
+</html>
+git init
+git add .
+git commit -m "Primera versión de mi página"
+git remote add origin https://github.com/JANZB-cap/mi-pagina-web.git
+git branch -M main
+git push -u origin main
+=======
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>JANZB — Capifresh · Refrescos funcionales</title>
+  <meta name="description" content="Capifresh de JANZB: bebidas enlatadas a base de manzana, mango y plátano formuladas para contribuir al bienestar digestivo dentro de un estilo de vida saludable.">
+  <style>
+    :root{
+      --accent:#37b24d; /* verde */
+      --accent-2:#ff8c42; /* mango */
+      --bg:#0f1724;
+      --card:#0b1220;
+      --glass: rgba(255,255,255,0.04);
+      --muted:#a3b1c2;
+      --radius:14px;
+      font-family:Inter,ui-sans-serif,system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:linear-gradient(180deg,#071022 0%, #081426 60%);color:#e6eef6;line-height:1.45}
+    header{display:flex;align-items:center;justify-content:space-between;padding:18px 28px}
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:flex;align-items:center;justify-content:center;font-weight:700;font-size:18px;box-shadow:0 6px 18px rgba(0,0,0,0.45)}
+    .brand h1{margin:0;font-size:18px}
+    nav a{color:var(--muted);text-decoration:none;margin-left:18px;font-size:14px}
+
+    /* HERO */
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:32px;align-items:center;padding:36px 28px}
+    .hero .content{max-width:720px}
+    .eyebrow{color:var(--accent);font-weight:700;font-size:13px}
+    .hero h2{font-size:40px;margin:8px 0}
+    .lead{color:var(--muted);margin-bottom:18px}
+    .cta-row{display:flex;gap:12px}
+    .btn{background:var(--accent);color:#062023;padding:12px 18px;border-radius:12px;font-weight:700;border:0;cursor:pointer}
+    .btn.secondary{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted)}
+
+    /* Product card column */
+    .product-column{background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));padding:18px;border-radius:18px}
+    .can{display:flex;flex-direction:column;gap:12px;align-items:center}
+    .can img{width:160px}
+    .flavors{display:flex;gap:10px;justify-content:center;margin-top:6px}
+    .pill{background:var(--glass);padding:8px 12px;border-radius:999px;font-size:13px;color:var(--muted)}
+
+    /* Features */
+    .features{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;padding:28px}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:18px;border-radius:14px}
+    .icon{width:48px;height:48px;border-radius:10px;background:rgba(255,255,255,0.02);display:flex;align-items:center;justify-content:center;margin-bottom:8px}
+
+    /* Interactive zone */
+    .interactive{display:grid;grid-template-columns:1fr 360px;gap:18px;padding:28px}
+    .products-grid{display:flex;flex-direction:column;gap:12px}
+    .product-item{display:flex;align-items:center;gap:12px;padding:12px;border-radius:12px;background:linear-gradient(90deg, rgba(255,255,255,0.01), rgba(255,255,255,0.005));border:1px solid rgba(255,255,255,0.02)}
+    .product-item img{width:64px}
+    .product-info h4{margin:0}
+    .add{margin-left:auto}
+
+    /* Right column */
+    .panel{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:18px;border-radius:12px}
+    .small{font-size:13px;color:var(--muted)}
+
+    /* FAQ */
+    .faq{padding:28px}
+    .faq-item{border-top:1px solid rgba(255,255,255,0.03);padding:12px 0}
+    .faq-question{display:flex;justify-content:space-between;cursor:pointer}
+
+    footer{padding:22px;border-top:1px solid rgba(255,255,255,0.02);display:flex;justify-content:space-between;align-items:center}
+
+    /* Responsiveness */
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr;}
+      .interactive{grid-template-columns:1fr}
+      .features{grid-template-columns:1fr}
+    }
+
+    /* small helpers */
+    .muted{color:var(--muted)}
+    .pill-apple{background:linear-gradient(90deg,#dff7e2,#d2f2d9);color:#09421b;padding:6px 10px;border-radius:999px;font-weight:700}
+    .pill-mango{background:linear-gradient(90deg,#fff0e0,#ffe6cc);color:#663300;padding:6px 10px;border-radius:999px;font-weight:700}
+    .pill-banana{background:linear-gradient(90deg,#fff9e0,#fff7d1);color:#6a4b00;padding:6px 10px;border-radius:999px;font-weight:700}
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <div class="logo">JB</div>
+      <div>
+        <h1>JANZB <small class="muted">· Capifresh</small></h1>
+        <div class="small muted">Refrescos funcionales — manzana • mango • plátano</div>
+      </div>
+    </div>
+    <nav>
+      <a href="#productos">Productos</a>
+      <a href="#beneficios">Beneficios</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" aria-label="Presentación Capifresh">
+      <div class="content">
+        <div class="eyebrow">NUEVO</div>
+        <h2>Capifresh — Refrescos enlatados pensados para tu digestión</h2>
+        <p class="lead">Capifresh combina ingredientes naturales de manzana, mango y plátano para ofrecer una bebida refrescante pensada para personas con molestias digestivas leves. Formulado para complementar una dieta equilibrada. <strong>No es un medicamento.</strong></p>
+        <div class="cta-row">
+          <button class="btn" id="trySamples">Pedir muestra</button>
+          <button class="btn secondary" id="verInfo">Ver fichas</button>
+        </div>
+        <div style="margin-top:16px;color:var(--muted);font-size:13px">Consulta siempre a un profesional de la salud si padeces gastritis o condiciones digestivas crónicas.</div>
+
+        <div style="margin-top:26px">
+          <h3 style="margin-bottom:8px">¿Cuál es tu sabor?</h3>
+          <div style="display:flex;gap:10px">
+            <button class="pill-apple" data-sabor="manzana">Manzana</button>
+            <button class="pill-mango" data-sabor="mango">Mango</button>
+            <button class="pill-banana" data-sabor="platano">Plátano</button>
+          </div>
+        </div>
+      </div>
+
+      <aside class="product-column" aria-hidden="false">
+        <div class="can">
+          <img src="lata.png" alt="Lata Capifresh">
+          <div style="text-align:center">
+            <div style="font-weight:700">Capifresh · Manzana</div>
+            <div class="muted" style="font-size:13px">330 ml | Sin conservantes artificiales</div>
+            <div class="flavors">
+              <div class="pill">Manzana</div>
+              <div class="pill">Mango</div>
+              <div class="pill">Plátano</div>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <section id="beneficios" class="features" aria-label="Beneficios principales">
+      <div class="card">
+        <div class="icon">🍎</div>
+        <h3>Formulación cuidadosa</h3>
+        <p class="muted">Ingredientes seleccionados para ser suaves con el estómago e incluir fibra soluble natural de las frutas.</p>
+      </div>
+      <div class="card">
+        <div class="icon">🌿</div>
+        <h3>Sin conservantes artificiales</h3>
+        <p class="muted">Procesos que buscan mantener las propiedades naturales sin añadir aditivos innecesarios.</p>
+      </div>
+      <div class="card">
+        <div class="icon">⚡</div>
+        <h3>Refrescante y práctico</h3>
+        <p class="muted">Latas de 330 ml perfectas para llevar y consumir en cualquier momento.</p>
+      </div>
+    </section>
+
+    <section class="interactive" aria-label="Zona interactiva">
+      <div>
+        <h3 id="productos">Nuestros productos</h3>
+        <div class="products-grid" id="productsGrid">
+          <!-- Product items populated por JS -->
+        </div>
+
+        <div style="margin-top:18px">
+          <h4>Test rápido — ¿Qué cuidado digestivo necesitas?</h4>
+          <form id="quiz" style="display:grid;gap:8px;margin-top:8px">
+            <label class="small"><input type="radio" name="q1" value="1" required> Molestias ocasionales (acidez leve)</label>
+            <label class="small"><input type="radio" name="q1" value="2"> Molestias frecuentes</label>
+            <label class="small"><input type="radio" name="q1" value="3"> Diagnóstico médico de gastritis</label>
+            <button type="submit" class="btn" style="width:180px">Ver recomendación</button>
+          </form>
+          <div id="quizResult" class="panel" style="margin-top:10px;display:none"></div>
+        </div>
+      </div>
+
+      <aside>
+        <div class="panel">
+          <h4>Ficha rápida</h4>
+          <p class="small">Tamaño: 330 ml · Ingredientes principales: pulpa y extractos de frutas, agua purificada, fibra soluble natural.</p>
+
+          <div style="margin-top:10px">
+            <strong>Advertencia:</strong>
+            <p class="small muted">Capifresh está formulado para contribuir al confort digestivo como parte de una dieta saludable. <strong>No está destinado a diagnosticar, tratar o curar enfermedades.</strong> Si tienes gastritis diagnosticada, consulta a tu médico antes de introducir nuevos alimentos o bebidas.</p>
+          </div>
+
+          <div style="margin-top:12px;display:flex;gap:8px">
+            <button class="btn" id="downloadPDF">Descargar ficha (PDF)</button>
+            <button class="btn secondary" id="openFaq">Ver FAQ</button>
+          </div>
+        </div>
+
+        <div style="height:12px"></div>
+
+        <div class="panel" style="margin-top:12px">
+          <h4>Promoción</h4>
+          <p class="small">Suscríbete y recibe 10% de descuento en tu primera compra.</p>
+          <input id="email" type="email" placeholder="tu@email.com" style="width:100%;padding:8px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;margin-top:8px;color:inherit">
+          <button class="btn" style="width:100%;margin-top:8px" id="subscribe">Suscribirme</button>
+          <div id="subResult" class="small muted" style="margin-top:8px;display:none"></div>
+        </div>
+      </aside>
+    </section>
+
+    <section id="faq" class="faq">
+      <h3>Preguntas frecuentes</h3>
+      <div class="faq-item">
+        <div class="faq-question"><div>¿Capifresh cura la gastritis?</div><div class="muted">+</div></div>
+        <div class="faq-answer muted" style="display:none;margin-top:8px">No. Capifresh está pensado para aportar confort digestivo en personas con molestias leves como parte de una alimentación equilibrada. No sustituye el tratamiento médico.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question"><div>¿Contiene azúcar?</div><div class="muted">+</div></div>
+        <div class="faq-answer muted" style="display:none;margin-top:8px">Contiene azúcares naturales de la fruta y una cantidad reducida añadida. Consulta la ficha técnica para valores exactos.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question"><div>¿Es apto para veganos?</div><div class="muted">+</div></div>
+        <div class="faq-answer muted" style="display:none;margin-top:8px">Sí. No empleamos ingredientes de origen animal.</div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div>
+      <strong>JANZB</strong> · Capifresh — Hecho con frutas reales
+    </div>
+    <div class="muted">Hecho en Perú · © JANZB 2025</div>
+  </footer>
+
+  <script>
+    // Datos de los productos
+    const products = [
+      {
+        id: 'manzana',
+        name: 'Capifresh Manzana',
+        desc: 'Suave y ligeramente acidulada, con pectina natural para confort digestivo.',
+        img: 'https://images.unsplash.com/photo-1574226516831-e1dff420e38e?q=80&w=600&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder',
+        tag: 'Manzana'
+      },
+      {
+        id: 'mango',
+        name: 'Capifresh Mango',
+        desc: 'Exótico y dulce, formulado para ser gentil con el estómago.',
+        img: 'https://images.unsplash.com/photo-1567306226416-28f0efdc88ce?q=80&w=600&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder',
+        tag: 'Mango'
+      },
+      {
+        id: 'platano',
+        name: 'Capifresh Plátano',
+        desc: 'Suave, cremoso y rico en potasio; pensado para paladares sensibles.',
+        img: 'https://images.unsplash.com/photo-1506806732259-39c2d0268443?q=80&w=600&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder',
+        tag: 'Plátano'
+      }
+    ];
+
+    // Render productos
+    const grid = document.getElementById('productsGrid');
+    function renderProducts(){
+      grid.innerHTML = '';
+      products.forEach(p=>{
+        const item = document.createElement('div');
+        item.className = 'product-item';
+        item.innerHTML = `
+          <img src="${p.img}" alt="${p.name}">
+          <div class="product-info">
+            <h4>${p.name}</h4>
+            <div class="muted" style="font-size:13px">${p.desc}</div>
+            <div style="margin-top:8px"><span class="pill">${p.tag}</span></div>
+          </div>
+          <div class="add">
+            <button class="btn" data-id="${p.id}">Agregar</button>
+          </div>
+        `;
+        grid.appendChild(item);
+      })
+    }
+    renderProducts();
+
+    // Agregar acción "Agregar" con animación simple
+    document.addEventListener('click', e=>{
+      if(e.target.matches('.product-item .btn')){
+        const id = e.target.dataset.id;
+        e.target.disabled = true;
+        e.target.textContent = 'Añadido ✓';
+        setTimeout(()=>{e.target.disabled=false; e.target.textContent='Agregar'},1200);
+        // feedback visual
+        e.target.animate([{transform:'scale(1)'},{transform:'scale(1.06)'},{transform:'scale(1)'}],{duration:350});
+      }
+    });
+
+    // Quiz
+    const quiz = document.getElementById('quiz');
+    const quizResult = document.getElementById('quizResult');
+    quiz.addEventListener('submit', e=>{
+      e.preventDefault();
+      const val = +document.querySelector('input[name=q1]:checked').value;
+      quizResult.style.display = 'block';
+      if(val===1){
+        quizResult.innerHTML = '<strong>Recomendación:</strong> Puedes probar Capifresh en sabores suaves como Manzana o Plátano. Si las molestias persisten, consulta a un profesional.';
+      } else if(val===2){
+        quizResult.innerHTML = '<strong>Recomendación:</strong> Prioriza la moderación. Prefiere plátano o manzana, y consulta con tu médico si requieres orientación personalizada.';
+      } else {
+        quizResult.innerHTML = '<strong>Importante:</strong> Si tienes gastritis diagnosticada, consulta a tu médico antes de consumir nuevos productos. Capifresh no reemplaza tratamiento médico.';
+      }
+    });
+
+    // FAQ accordion
+    document.querySelectorAll('.faq-item').forEach((node, i)=>{
+      const q = node.querySelector('.faq-question');
+      q.addEventListener('click', ()=>{
+        const a = node.querySelector('.faq-answer');
+        const open = a.style.display === 'block';
+        document.querySelectorAll('.faq-answer').forEach(x=>x.style.display='none');
+        a.style.display = open ? 'none' : 'block';
+      })
+    });
+
+    // Suscripción (simulada)
+    document.getElementById('subscribe').addEventListener('click', ()=>{
+      const email = document.getElementById('email').value;
+      const res = document.getElementById('subResult');
+      if(!email || !email.includes('@')){res.style.display='block';res.textContent='Introduce un email válido';return}
+      res.style.display='block';res.textContent='¡Gracias! Revisa tu correo para confirmar la suscripción.';
+    });
+
+    // Botones principales
+    document.getElementById('trySamples').addEventListener('click', ()=>{
+      alert('Gracias por solicitar una muestra. Un representante de JANZB te contactará.');
+    });
+    document.getElementById('verInfo').addEventListener('click', ()=>{
+      document.querySelector('#beneficios').scrollIntoView({behavior:'smooth'});
+    });
+    document.getElementById('openFaq').addEventListener('click', ()=>{document.querySelector('#faq').scrollIntoView({behavior:'smooth'});});
+
+    // Descargar PDF: generador simple (crea un blob con texto)
+    document.getElementById('downloadPDF').addEventListener('click', ()=>{
+      const content = `Ficha Capifresh\n\nProductos:\n- Manzana\n- Mango\n- Plátano\n\nAdvertencia: Capifresh no es un medicamento. Consulte con su médico.`;
+      const blob = new Blob([content],{type:'application/pdf'});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a'); a.href=url; a.download='Ficha_Capifresh.pdf'; a.click(); URL.revokeObjectURL(url);
+    });
+
+    // Pulsar en sabores del hero para filtrar
+    document.querySelectorAll('[data-sabor]').forEach(btn=>{
+      btn.addEventListener('click', ()=>{
+        const sabor = btn.dataset.sabor;
+        const filtered = products.filter(p=>p.id===sabor);
+        grid.innerHTML='';
+        filtered.forEach(p=>{
+          const item = document.createElement('div');
+          item.className='product-item';
+          item.innerHTML = `
+            <img src="${p.img}" alt="${p.name}">
+            <div class="product-info">
+              <h4>${p.name}</h4>
+              <div class="muted" style="font-size:13px">${p.desc}</div>
+            </div>
+            <div class="add"><button class="btn" data-id="${p.id}">Agregar</button></div>
+          `;
+          grid.appendChild(item);
+        });
+      })
+    });
+
+    // Accesibilidad: keyboard for FAQ
+    document.addEventListener('keydown', e=>{
+      if(e.key==='f' && (e.ctrlKey||e.metaKey)){
+        document.querySelector('#faq').scrollIntoView();
+      }
+    });
+
+  </script>
+</body>
+</html>
+git init
+git add .
+git commit -m "Primera versión de mi página"
+git remote add origin https://github.com/JANZB-cap/mi-pagina-web.git
+git branch -M main
+git push -u origin main
+>>>>>>> 0ae3c13e48cd8dc4eaf6b4f42c0eb7257d9ef64c
